@@ -1,0 +1,35 @@
+server:
+  port: 8085
+spring:
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: 123456
+    url: jdbc:mysql://localhost:3306/mon-cli?characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=false&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=GMT%2B8&allowMultiQueries=true&allowPublicKeyRetrieval=true
+
+  redis:
+    database: 1
+    host: localhost
+    port: 6379
+    timeout: 5000s  # 连接超时时长（毫秒）
+
+#    阿里云短信服务
+aliyun:
+  sms:
+    accessKeyId: xx
+    accessKeySecret: xx
+    signName: xx
+    verificationCode: xx
+    endpoint: xx
+#    mybatis输出日志
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+base:
+  tenant:
+    tables:
+      - sys_role
+      - sys_role_menu
+      - sys_user_role
